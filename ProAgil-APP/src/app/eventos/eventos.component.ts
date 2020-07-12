@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { EventoService } from '../_services/Evento.service';
+import { Evento } from '../_models/Evento';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-eventos',
@@ -7,7 +10,20 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./eventos.component.css'],
 })
 export class EventosComponent implements OnInit {
+  eventosFiltrados: any = [];
+  evento: Evento[];
+  imagemAltura = 50;
+  imagemMargem = 2;
+  mostrarImagem = false;
+  modalRef: BsModalRef;
+
   _filtroLista: string;
+
+  constructor(
+      private eventoService: EventoService
+    , private modalService: BsModalService
+  ) { }
+
   get filtroLista(): string {
     return this._filtroLista;
   }
@@ -19,21 +35,17 @@ export class EventosComponent implements OnInit {
       : this.evento;
   }
 
-  eventosFiltrados: any = [];
-  evento: any = [];
-  imagemAltura = 50;
-  imagemMargem = 2;
-  mostrarImagem = false;
-
-  constructor(private http: HttpClient) {}
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
+  }
 
   ngOnInit() {
     this.getEventos();
- 
+
   }
 
- 
-  filtrarEventos(filtrarPor: string): any {
+
+  filtrarEventos(filtrarPor: string): Evento[] {
     filtrarPor = filtrarPor.toLocaleLowerCase();
     if (!filtrarPor) {
       return this.evento;
@@ -41,9 +53,7 @@ export class EventosComponent implements OnInit {
       return this.evento.filter(
         (evento) =>
           evento.tema.toLocaleLowerCase().indexOf(filtrarPor) !== -1 ||
-          evento.local.toLocaleLowerCase().indexOf(filtrarPor) !== -1 ||
-          evento.lote.toLocaleLowerCase().indexOf(filtrarPor) !== -1 ||
-          evento.dataEvento.toLocaleLowerCase().indexOf(filtrarPor) !== -1
+          evento.local.toLocaleLowerCase().indexOf(filtrarPor) !== -1
       );
     }
   }
@@ -53,12 +63,12 @@ export class EventosComponent implements OnInit {
     this.mostrarImagem = !this.mostrarImagem;
   }
   getEventos() {
-    this.http.get('http://localhost:5000/api/values').subscribe(
-      (response) => {
-        
-        this.evento = response;
-        this.eventosFiltrados = response;
-      
+    this.eventoService.getEvento().subscribe(
+      (_eventos: Evento[]) => {
+
+        this.evento = _eventos;
+        this.eventosFiltrados = _eventos;
+
       },
       (error) => {
         console.log(error);
