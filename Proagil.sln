@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProAgil.API", "ProAgil.API\ProAgil.API.csproj", "{5065FC56-D471-4596-BE0B-663F5C74C2A3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProAgil.Domain", "ProAgil.Domain\ProAgil.Domain.csproj", "{63DDFF01-D31D-4367-A5A5-AA91C68C329E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProAgil.Repository", "ProAgil.Repository\ProAgil.Repository.csproj", "{1D496DAC-7FCB-4CFA-9898-DC4832CAB8D8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +34,29 @@ Global
 		{5065FC56-D471-4596-BE0B-663F5C74C2A3}.Release|x64.Build.0 = Release|Any CPU
 		{5065FC56-D471-4596-BE0B-663F5C74C2A3}.Release|x86.ActiveCfg = Release|Any CPU
 		{5065FC56-D471-4596-BE0B-663F5C74C2A3}.Release|x86.Build.0 = Release|Any CPU
+		{63DDFF01-D31D-4367-A5A5-AA91C68C329E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63DDFF01-D31D-4367-A5A5-AA91C68C329E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63DDFF01-D31D-4367-A5A5-AA91C68C329E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{63DDFF01-D31D-4367-A5A5-AA91C68C329E}.Debug|x64.Build.0 = Debug|Any CPU
+		{63DDFF01-D31D-4367-A5A5-AA91C68C329E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{63DDFF01-D31D-4367-A5A5-AA91C68C329E}.Debug|x86.Build.0 = Debug|Any CPU
+		{63DDFF01-D31D-4367-A5A5-AA91C68C329E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63DDFF01-D31D-4367-A5A5-AA91C68C329E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63DDFF01-D31D-4367-A5A5-AA91C68C329E}.Release|x64.ActiveCfg = Release|Any CPU
+		{63DDFF01-D31D-4367-A5A5-AA91C68C329E}.Release|x64.Build.0 = Release|Any CPU
+		{63DDFF01-D31D-4367-A5A5-AA91C68C329E}.Release|x86.ActiveCfg = Release|Any CPU
+		{63DDFF01-D31D-4367-A5A5-AA91C68C329E}.Release|x86.Build.0 = Release|Any CPU
+		{1D496DAC-7FCB-4CFA-9898-DC4832CAB8D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D496DAC-7FCB-4CFA-9898-DC4832CAB8D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D496DAC-7FCB-4CFA-9898-DC4832CAB8D8}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1D496DAC-7FCB-4CFA-9898-DC4832CAB8D8}.Debug|x64.Build.0 = Debug|Any CPU
+		{1D496DAC-7FCB-4CFA-9898-DC4832CAB8D8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1D496DAC-7FCB-4CFA-9898-DC4832CAB8D8}.Debug|x86.Build.0 = Debug|Any CPU
+		{1D496DAC-7FCB-4CFA-9898-DC4832CAB8D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D496DAC-7FCB-4CFA-9898-DC4832CAB8D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D496DAC-7FCB-4CFA-9898-DC4832CAB8D8}.Release|x64.ActiveCfg = Release|Any CPU
+		{1D496DAC-7FCB-4CFA-9898-DC4832CAB8D8}.Release|x64.Build.0 = Release|Any CPU
+		{1D496DAC-7FCB-4CFA-9898-DC4832CAB8D8}.Release|x86.ActiveCfg = Release|Any CPU
+		{1D496DAC-7FCB-4CFA-9898-DC4832CAB8D8}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
