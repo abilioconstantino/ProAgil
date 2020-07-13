@@ -12,10 +12,22 @@ export class EventoService {
   getEvento(): Observable<Evento[]> {
     return this.http.get<Evento[]>(this.baseURL);
   }
-  getEventoByTema(tema: string): Observable<Evento[]> {
-    return this.http.get<Evento[]>('${this.baseURL}/getByTema/${tema}');
+  getEventoByTema(Tema: string): Observable<Evento[]> {
+    return this.http.get<Evento[]>(`${this.baseURL}/getByTema/${Tema}`);
   }
   getEventoById(id: number): Observable<Evento[]> {
-    return this.http.get<Evento[]>('${this.baseURL}/${id}');
+    return this.http.get<Evento[]>(`${this.baseURL}/${id}`);
   }
+  postEvento(evento: Evento) {
+    return this.http.post(this.baseURL, evento);
+  }
+
+  putEvento(evento: Evento) {
+    return this.http.put(`${this.baseURL}/${evento.id}`, evento);
+  }
+
+  deleteEvento(id: number) {
+    return this.http.delete(`${this.baseURL}/${id}`);
+  }
+
 }

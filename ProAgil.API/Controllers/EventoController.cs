@@ -90,18 +90,22 @@ namespace ProAgil.API.Controllers
             {
 
                 var evento = await _repo.GetAllEventoAsyncById(EventoId, false);
-                if (evento == null) return NotFound();
 
+               
+                if (evento == null) return NotFound();
+               
+              
                 _repo.Update(model);
+                 
                 if (await _repo.SaveChangesAsync())
                 {
                     return Created($"/api/evento/{model.Id}", model);
                 }
 
             }
-            catch (System.Exception)
+            catch (System.Exception ex)
             {
-                return this.StatusCode(StatusCodes.Status500InternalServerError, "Banco de Dados Falhou!");
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "Banco de Dados Falhou!" + ex.Message);
             }
 
             return BadRequest();

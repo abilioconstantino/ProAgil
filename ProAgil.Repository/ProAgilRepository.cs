@@ -81,7 +81,7 @@ namespace ProAgil.Repository
                     .ThenInclude(p => p.Palestrante);
             }
 
-            query = query.OrderByDescending(c => c.DataEvento)
+            query = query.AsNoTracking().OrderByDescending(c => c.DataEvento)
                 .Where(c => c.Id == EventoId);
 
             return await query.FirstOrDefaultAsync();
